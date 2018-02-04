@@ -11,11 +11,11 @@ import AlamofireImage
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIND: UIActivityIndicatorView!
-    
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +52,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         }
         task.resume()
     }
-    
-//    //start and stop activity indicator
-//    func startAnimating() {
-//        activityIND.startAnimating()
-//        activityIND.hidesWhenStopped = false
-//    }
-//
-//    func stopAnimating() {
-//        activityIND.stopAnimating()
-//        activityIND.hidesWhenStopped = true
-//    }
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -72,7 +60,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
