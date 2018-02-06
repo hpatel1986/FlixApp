@@ -13,6 +13,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
     
@@ -23,9 +25,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
-        
-        
         tableView.dataSource = self
+ 
         fetchMovies()
     }
     
@@ -35,6 +36,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     }
     
     func fetchMovies() {
+        
+        self.activityIndicator.startAnimating()
+        
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -48,12 +52,13 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.movies = movies
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
             }
         }
         task.resume()
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> (Int) {
         return movies.count
     }
     
@@ -74,14 +79,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
-
 }

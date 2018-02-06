@@ -11,7 +11,7 @@ The following **required** user stories are complete:
 - [ x] User sees app icon in home screen and styled launch screen (+1pt)
 - [ x] User can scroll through a list of movies currently playing in theaters from The Movie DB API (+5pt)
 - [ x] User can "Pull to refresh" the movie list (+2pt)
-- [ ] User sees a loading state while waiting for the movies to load (+2pt)
+- [ x] User sees a loading state while waiting for the movies to load (+2pt)
 
 The following **stretch** user stories are implemented:
 
@@ -35,7 +35,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<a href="https://imgflip.com/gif/23y2n1"><img src="https://i.imgflip.com/23y2n1.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/2419zm"><img src="https://i.imgflip.com/2419zm.gif" title="made at imgflip.com"/></a>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/) and [ImgFlip] (https://imgflip.com/gifgenerator).
 
@@ -43,8 +43,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/) and [ImgFlip] (https:
 
 Describe any challenges encountered while building the app.
 
-1. Trying to implement the activity indicator to hide after the page is loaded.
-2. Trying to incorporate the searchBar and filter through the data to only display search results.
+1. Trying to incorporate the searchBar and filter through the data to only display search results.
+2.
 
 ## License
 
