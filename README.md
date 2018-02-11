@@ -113,7 +113,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/) and [ImgFlip] (https:
 
 Describe any challenges encountered while building the app.
 
-- Adding the 'superhero' filter in the bottom tab.
+- Adding the 'superhero' filter in the superhero tab.
 
 ## License
 
